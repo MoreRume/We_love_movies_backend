@@ -5,11 +5,11 @@
 exports.up = function(knex) {
     return knex.schema.createTable('movies', function(table) {
       table.increments('movie_id').primary();
-      table.string('title').notNullable();
-      table.integer('runtime_in_minutes').notNullable();
+      table.string('title');
+      table.integer('runtime_in_minutes');
       table.string("rating", ["G", "PG", "PG-13", "R", "NC-17", "NR"]);
-      table.text('description').notNullable();
-      table.string('image_url').notNullable();
+      table.text('description');
+      table.string('image_url');
       table.timestamps(true, true);
     });
   };
