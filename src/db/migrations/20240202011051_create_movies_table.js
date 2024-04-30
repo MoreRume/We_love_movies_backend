@@ -7,7 +7,7 @@ exports.up = function(knex) {
       table.increments('movie_id').primary();
       table.string('title').notNullable();
       table.integer('runtime_in_minutes').notNullable();
-      table.string('rating').notNullable();
+      table.string("rating", ["G", "PG", "PG-13", "R", "NC-17", "NR"]);
       table.text('description').notNullable();
       table.string('image_url').notNullable();
       table.timestamps(true, true);
